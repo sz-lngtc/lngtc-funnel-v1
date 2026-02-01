@@ -27,7 +27,7 @@ export function PostPreviewPage() {
         className={styles.ctaPrimary}
         onClick={() => navigate('/post/paywall', { replace: true })}
       >
-        Continue
+        Unlock my longevity journey
       </button>
     </div>
   )

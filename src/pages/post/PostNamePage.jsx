@@ -1,17 +1,20 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAnswers } from '../../context/AnswersContext'
+import { calculateLongevityScore } from '../../utils/score'
+import { submitFunnelPayload } from '../../api'
 import styles from './PostShared.module.css'
 
 const ANSWER_ID = 'post_name'
 
 export function PostNamePage() {
   const navigate = useNavigate()
-  const { setAnswer } = useAnswers()
+  const { answers, setAnswer } = useAnswers()
   const [value, setValue] = useState('')
   const [error, setError] = useState('')
+  const [saving, setSaving] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const trimmed = value.trim()
     if (!trimmed) {
@@ -20,7 +23,16 @@ export function PostNamePage() {
     }
     setError('')
     setAnswer(ANSWER_ID, trimmed)
-    navigate('/post/preview', { replace: true })
+    const payload = { ...answers, [ANSWER_ID]: trimmed }
+    const score = calculateLongevityScore(payload)
+    setSaving(true)
+    try {
+      await submitFunnelPayload({ answers: payload, score })
+      navigate('/post/preview', { replace: true })
+    } catch (err) {
+      setError('Could not save. Please try again.')
+      setSaving(false)
+    }
   }
 
   return (
@@ -36,8 +48,8 @@ export function PostNamePage() {
           aria-label="Name"
         />
         {error && <p className={styles.error}>{error}</p>}
-        <button type="submit" className={styles.ctaPrimary}>
-          Continue
+        <button type="submit" className={styles.ctaPrimary} disabled={saving}>
+          {saving ? 'Saving…' : 'Continue'}
         </button>
       </form>
     </div>
