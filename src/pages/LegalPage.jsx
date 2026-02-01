@@ -5,6 +5,8 @@ const LEGAL_PAGES = {
   terms: { title: 'Terms of Use' },
   privacy: { title: 'Privacy Policy' },
   restore: { title: 'Restore Purchase' },
+  subscription: { title: 'Subscription Policy' },
+  cookie: { title: 'Cookie Policy' },
   'money-back': { title: 'Money-back policy' },
 }
 

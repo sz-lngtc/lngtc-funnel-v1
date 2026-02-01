@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { useAnswers } from '../context/AnswersContext'
 import { INTRO } from '../data/questions'
 import styles from './IntroPage.module.css'
@@ -32,7 +32,13 @@ export function IntroPage() {
             </button>
           ))}
         </div>
-        <p className={styles.legal}>{INTRO.legalLine}</p>
+        <p className={styles.legal}>
+          By continuing, you agree to the{' '}
+          <Link to="/terms" className={styles.legalLink}>Terms of Use</Link>,{' '}
+          <Link to="/privacy" className={styles.legalLink}>Privacy Policy</Link>,{' '}
+          <Link to="/subscription" className={styles.legalLink}>Subscription Policy</Link>, and{' '}
+          <Link to="/cookie" className={styles.legalLink}>Cookie Policy</Link>.
+        </p>
         <p className={styles.disclaimer}>{INTRO.disclaimer}</p>
       </div>
     </div>

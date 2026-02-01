@@ -28,6 +28,8 @@ function App() {
           <Route index element={<IntroPage />} />
           <Route path="terms" element={<LegalPage />} />
           <Route path="privacy" element={<LegalPage />} />
+          <Route path="subscription" element={<LegalPage />} />
+          <Route path="cookie" element={<LegalPage />} />
           <Route path="restore" element={<LegalPage />} />
           <Route path="money-back" element={<LegalPage />} />
           <Route path="dob" element={<DOBPage />} />

@@ -79,6 +79,15 @@
   margin: 0 0 10px;
 }
 
+.legalLink {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.legalLink:hover {
+  text-decoration: underline;
+}
+
 .disclaimer {
   font-size: 0.65rem;
   line-height: 1.45;
