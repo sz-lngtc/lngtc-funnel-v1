@@ -1,0 +1,45 @@
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 32px;
+  color: var(--text);
+}
+
+.steps {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stepRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.stepLabel {
+  font-size: 0.9375rem;
+  color: var(--text);
+}
+
+.stepPercent {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+}

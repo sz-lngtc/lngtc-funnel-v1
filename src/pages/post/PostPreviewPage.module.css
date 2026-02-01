@@ -1,0 +1,71 @@
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 24px;
+  color: var(--text);
+}
+
+.section {
+  margin-bottom: 28px;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: var(--text);
+}
+
+.chartPlaceholder {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 12px;
+  height: 120px;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+}
+
+.chartBar {
+  width: 24px;
+  min-height: 8px;
+  background: var(--accent);
+  border-radius: 4px 4px 0 0;
+  transition: height 0.3s ease;
+}
+
+.caption {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.ctaPrimary {
+  display: inline-block;
+  padding: 16px 32px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--radius-sm);
+  min-height: 52px;
+  line-height: 1.25;
+  margin-top: auto;
+  transition: filter 0.15s ease;
+}
+
+.ctaPrimary:hover {
+  filter: brightness(1.05);
+}

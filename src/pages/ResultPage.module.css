@@ -2,71 +2,227 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Header bar: back + title */
+.header {
+  display: flex;
   align-items: center;
-  padding: 32px 0;
+  justify-content: space-between;
+  padding: 12px 16px;
+  padding-top: calc(12px + var(--safe-top));
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease;
+}
+
+.backBtn:hover {
+  background: var(--bg-card-hover);
+}
+
+.headerTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+}
+
+.headerSpacer {
+  width: 40px;
 }
 
 .card {
+  flex: 1;
   width: 100%;
-  text-align: center;
+  padding: 24px 0 32px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .title {
-  font-size: 1.375rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin: 0 0 20px;
+  margin: 0 0 8px;
   color: var(--text);
 }
 
 .scoreWrap {
   display: flex;
   align-items: baseline;
-  justify-content: center;
   gap: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
 
 .score {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--score-color, var(--accent));
   line-height: 1;
 }
 
 .max {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: var(--text-muted);
 }
 
-.level {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin: 0 0 24px;
+/* Visual scale: track + segments + marker + bubble */
+.scaleBlock {
+  margin-bottom: 28px;
 }
 
-.desc {
-  font-size: 1rem;
+.scaleTrack {
+  position: relative;
+}
+
+.scaleSegments {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.scaleSegmentLabel {
+  flex: 1;
+  text-align: center;
+}
+
+.scaleBar {
+  position: relative;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: visible;
+}
+
+.scaleMarker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.scaleBubble {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 10px;
+  background: var(--text);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.scaleBubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--text);
+}
+
+.scaleDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Score explanation card */
+.explanationCard {
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+}
+
+.explanationText {
+  font-size: 0.9375rem;
   line-height: 1.55;
   color: var(--text-muted);
-  margin: 0 0 32px;
+  margin: 0;
 }
 
-.cta {
-  display: inline-block;
-  padding: 16px 32px;
-  background: var(--border);
-  color: var(--text);
+/* Focus areas: title + bullet list */
+.focusSection {
+  margin-bottom: 28px;
+}
+
+.focusTitle {
+  font-size: 0.6875rem;
   font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+}
+
+.focusList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.focusItem {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
   font-size: 0.9375rem;
+  color: var(--text);
+}
+
+.focusItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.ctaPrimary {
+  display: block;
+  width: 100%;
+  padding: 16px 32px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
   border-radius: var(--radius-sm);
-  transition: background 0.15s ease, color 0.15s ease;
   min-height: 52px;
   line-height: 1.25;
+  margin-top: auto;
+  transition: filter 0.15s ease;
 }
 
-.cta:hover {
-  background: #cbd5e1;
-  color: var(--text);
+.ctaPrimary:hover {
+  filter: brightness(1.05);
 }
