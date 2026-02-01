@@ -50,80 +50,230 @@
   padding-bottom: calc(32px + var(--safe-bottom));
 }
 
-.title {
-  font-size: 1.5rem;
+/* Blocks */
+.block {
+  margin-bottom: 40px;
+}
+
+.block:last-of-type {
+  margin-bottom: 24px;
+}
+
+.blockTitle {
+  font-size: 1.25rem;
   font-weight: 700;
-  line-height: 1.25;
-  margin: 0 0 12px;
-  color: var(--text);
-}
-
-.description {
-  font-size: 0.9375rem;
-  line-height: 1.5;
-  color: var(--text-muted);
-  margin: 0 0 24px;
-}
-
-.benefits {
-  list-style: none;
-  margin: 0 0 24px;
-  padding: 0;
-}
-
-.benefit {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 14px;
-  font-size: 0.9375rem;
-  line-height: 1.45;
-  color: var(--text);
-}
-
-.benefit:last-child {
-  margin-bottom: 0;
-}
-
-.benefitIcon {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-}
-
-.heroImage {
-  margin-bottom: 28px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.heroPlaceholder {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, #e0e7ff 0%, #fce7f3 100%);
-  border-radius: var(--radius-lg);
-}
-
-.plansTitle {
-  font-size: 1.125rem;
-  font-weight: 700;
+  line-height: 1.3;
   margin: 0 0 16px;
   color: var(--text);
 }
 
-.plans {
+/* Block 1 — Now vs Goal */
+.nowVsGoal {
+  display: flex;
+  gap: 0;
+  padding: 0;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.nowVsGoalSide {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 12px 0;
+  text-align: left;
+}
+
+.nowVsGoalLabel {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0 0 6px;
+}
+
+.nowVsGoalValue,
+.nowVsGoalValueStrong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+
+.nowVsGoalBar {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.nowVsGoalSegment {
+  flex: 1;
+  height: 8px;
+  min-width: 0;
+  background: #e2e8f0;
+  border-radius: 2px;
+}
+
+.nowVsGoalSegmentFilled {
+  flex: 1;
+  height: 8px;
+  min-width: 0;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.nowVsGoalDivider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 -12px 0;
+}
+
+/* Block 2 */
+.block2Desc,
+.block2DescSecondary {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+.block2DescSecondary {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.block2Visuals {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+}
+
+.block2Score {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.block2ScoreLabel,
+.block2FocusLabel,
+.block2StrengthsLabel {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.block2ScoreValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--score-color, var(--accent));
+}
+
+/* Focus Areas diagram — ring with segments */
+.block2Focus {
+  margin: 0;
+}
+
+.focusDiagram {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 8px;
+  align-items: center;
+  justify-items: center;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.focusDiagramCenter {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 88px;
+  min-height: 44px;
+  padding: 10px 14px;
+}
+
+.focusDiagramCenterLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.focusDiagramSegment {
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  min-width: 0;
+}
+
+.focusDiagramSegmentLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.focusSegmentPos0 { grid-column: 2; grid-row: 1; }
+.focusSegmentPos1 { grid-column: 3; grid-row: 2; }
+.focusSegmentPos2 { grid-column: 2; grid-row: 3; }
+.focusSegmentPos3 { grid-column: 1; grid-row: 2; }
+
+.focusSegmentCat0 { background: #7dd3fc; }
+.focusSegmentCat0 .focusDiagramSegmentLabel { color: #0c4a6e; }
+.focusSegmentCat1 { background: #4ade80; }
+.focusSegmentCat1 .focusDiagramSegmentLabel { color: #14532d; }
+.focusSegmentCat2 { background: #94a3b8; }
+.focusSegmentCat3 { background: #f472b6; }
+.focusSegmentCat3 .focusDiagramSegmentLabel { color: #831843; }
+
+.block2StrengthsText {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+}
+
+/* Block 3 & 9 — Plan ready, Bundles */
+.promoLine {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin: 0 0 4px;
+}
+
+.promoCode {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 16px;
+  letter-spacing: 0.05em;
+}
+
+.bundlesInfo {
+  font-size: 0.875rem;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.bundlesDisclaimer {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0 0 20px;
+}
+
+.bundles {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
-.plan,
-.planSelected {
+.bundle,
+.bundleSelected {
   display: block;
   width: 100%;
   text-align: left;
@@ -138,22 +288,21 @@
   position: relative;
 }
 
-.plan:hover {
+.bundle:hover {
   border-color: #cbd5e1;
   background: var(--bg-card-hover);
 }
 
-.planSelected {
+.bundleSelected {
   border-color: var(--accent);
   background: var(--accent);
   color: #fff;
 }
 
-.planCheck {
+.bundleCheck {
   position: absolute;
   left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,50 +312,99 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
-.planSave {
+.bundleBadge {
   position: absolute;
   top: 12px;
   right: 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   color: #10b981;
 }
 
-.planSelected .planSave {
+.bundleSelected .bundleBadge {
   color: rgba(255, 255, 255, 0.95);
 }
 
-.planLabel {
+.bundleLabel {
   display: block;
   font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.planSelected .planLabel,
-.planSelected .planPrice,
-.planSelected .planTotal,
-.planSelected .planNote {
-  padding-left: 36px;
-}
-
-.planPrice {
-  display: block;
-  font-size: 1.125rem;
   font-weight: 700;
-  margin-bottom: 2px;
+  margin-bottom: 6px;
 }
 
-.planTotal,
-.planNote {
-  display: block;
-  font-size: 0.8125rem;
+.bundleSelected .bundleLabel,
+.bundleSelected .bundlePrice {
+  padding-left: 44px;
+}
+
+.bundlePrice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  margin-bottom: 6px;
+}
+
+.bundlePriceIntro {
   color: var(--text-muted);
 }
 
-.planSelected .planTotal,
-.planSelected .planNote {
+.bundleDiscountBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #10b981;
+}
+
+.bundleSelected .bundleDiscountBadge {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.bundlePriceOriginal {
+  text-decoration: line-through;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.bundleSelected .bundlePriceOriginal {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bundlePriceArrow {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.bundleSelected .bundlePriceArrow {
   color: rgba(255, 255, 255, 0.85);
+}
+
+.bundlePriceValue {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.bundleSelected .bundlePriceValue {
+  color: #fff;
+}
+
+.bundlePricePerDay {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+
+.bundleSelected .bundlePricePerDay {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.bundleLegalSingle {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0 0 20px;
 }
 
 .ctaPrimary {
@@ -228,22 +426,253 @@
   filter: brightness(1.05);
 }
 
-.postCta {
-  font-size: 0.75rem;
-  line-height: 1.45;
+.legalLine {
+  font-size: 0.8125rem;
   color: var(--text-muted);
   margin: 0 0 8px;
 }
 
-.footer {
-  margin-top: 28px;
-  padding-top: 20px;
+.paymentCards {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.cardIcon {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Block 4 */
+.block4List {
+  margin: 0 0 20px;
+  padding-left: 20px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.block4Trajectory {
+  padding: 16px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+}
+
+.block4TrajectoryTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.block4TrajectoryText {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.block4TrajectoryVisual {
+  font-size: 0.875rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.trajectoryArrow {
+  color: var(--accent);
+}
+
+/* Block 5 */
+.block5Sub {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin: 0 0 20px;
+  line-height: 1.45;
+}
+
+.resultsGraph {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 80px;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.resultsGraphBar {
+  flex: 1;
+  max-width: 48px;
+  background: linear-gradient(180deg, var(--accent) 0%, #0ea5e9 100%);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  min-height: 20px;
+}
+
+.resultsStats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.resultStat {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.resultStat strong {
+  color: var(--accent);
+}
+
+/* Block 6 */
+.block6Sub {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+.benefitsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.benefitsList li {
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+}
+
+.benefitsList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--success, #10b981);
+  font-weight: 700;
+}
+
+/* Block 7 — FAQ */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faqItem {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fff;
+  border: none;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.faqQuestion:hover {
+  background: var(--bg-card-hover);
+}
+
+.faqIcon {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+.faqAnswer {
+  padding: 0 16px 14px;
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-muted);
   border-top: 1px solid var(--border);
+}
+
+/* Block 8 — Reviews */
+.reviews {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.review {
+  padding: 16px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+}
+
+.reviewText {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 8px;
+  font-style: italic;
+}
+
+.reviewName {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Block 10 — Guarantee */
+.guaranteeText {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+.guaranteeLink {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.inlineLink {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.inlineLink:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  flex-shrink: 0;
+  padding: 16px 20px;
+  padding-bottom: calc(16px + var(--safe-bottom));
+  border-top: 1px solid var(--border);
+  background: #fff;
   text-align: center;
 }
 
-.footer span {
-  display: block;
+.footerRow {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   font-size: 0.75rem;
   color: var(--text-muted);
   margin-bottom: 8px;
