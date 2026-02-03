@@ -16,6 +16,22 @@ const app = express()
 app.use(express.json({ limit: '512kb' }))
 
 const PORT = process.env.PORT || 3001
+const API_KEY = process.env.API_KEY || null
+
+// Middleware для захисту GET /api/submissions
+function requireApiKey(req, res, next) {
+  if (!API_KEY) {
+    // Якщо API_KEY не встановлено, ендпоінт недоступний
+    return res.status(403).json({ ok: false, error: 'Access denied' })
+  }
+  
+  const providedKey = req.headers['x-api-key'] || req.query.key
+  if (providedKey !== API_KEY) {
+    return res.status(401).json({ ok: false, error: 'Invalid API key' })
+  }
+  
+  next()
+}
 
 async function ensureDataDir() {
   await fs.mkdir(DATA_DIR, { recursive: true })
@@ -55,7 +71,7 @@ app.post('/api/submit', async (req, res) => {
   }
 })
 
-app.get('/api/submissions', async (req, res) => {
+app.get('/api/submissions', requireApiKey, async (req, res) => {
   try {
     const list = await readSubmissions()
     res.json({ ok: true, count: list.length, data: list })
