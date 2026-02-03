@@ -55,6 +55,16 @@ app.post('/api/submit', async (req, res) => {
   }
 })
 
+app.get('/api/submissions', async (req, res) => {
+  try {
+    const list = await readSubmissions()
+    res.json({ ok: true, count: list.length, data: list })
+  } catch (err) {
+    console.error('GET /api/submissions', err)
+    res.status(500).json({ ok: false, error: 'Failed to read submissions' })
+  }
+})
+
 // Serve frontend (Railway: one service = API + static)
 const DIST_DIR = path.join(__dirname, '..', 'dist')
 app.use(express.static(DIST_DIR))
