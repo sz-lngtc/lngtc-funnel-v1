@@ -9,7 +9,6 @@ import {
   PAYWALL_RESULTS_STATS,
   PAYWALL_BENEFITS,
   PAYWALL_FAQ,
-  PAYWALL_REVIEWS,
 } from '../../data/postFunnel'
 import styles from './PostPaywallPage.module.css'
 
@@ -214,19 +213,6 @@ export function PostPaywallPage() {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Block 8 — User reviews */}
-        <section className={styles.block} aria-labelledby="block8-title">
-          <h2 id="block8-title" className={styles.blockTitle}>Users love Longetic</h2>
-          <ul className={styles.reviews}>
-            {PAYWALL_REVIEWS.map((r, i) => (
-              <li key={i} className={styles.review}>
-                <p className={styles.reviewText}>"{r.text}"</p>
-                <p className={styles.reviewName}>{r.name}</p>
-              </li>
-            ))}
-          </ul>
         </section>
 
         {/* Block 9 — Your personalized plan is ready (same as Block 3) */}
