@@ -107,7 +107,7 @@ export const PAYWALL_BUNDLES = [
     introPrice: '$6.49',
     introPerDay: '$0.93 / day',
     legal:
-      "By tapping \"Get my plan\" you agree that if you don't cancel at least 24 hours prior to the end of the 1 month introductory period, you will automatically be charged the full price of $40.99 every 1 month until you cancel by contacting support@goduomo.com. Learn more about cancellation and refund policy in Subscription Terms.",
+      "By tapping \"Get my plan\" you agree that if you don't cancel at least 24 hours prior to the end of the 1 month introductory period, you will automatically be charged the full price of $40.99 every 1 month until you cancel by contacting support@longetic.com. Learn more about cancellation and refund policy in ",
   },
   {
     id: '4week',
@@ -117,7 +117,7 @@ export const PAYWALL_BUNDLES = [
     introPrice: '$19.99',
     introPerDay: '$0.71 / day',
     legal:
-      "By tapping \"Get my plan\" you agree that if you don't cancel at least 24 hours prior to the end of the 1 month introductory period, you will automatically be charged the full price of $40.99 every 1 month until you cancel by contacting support@goduomo.com. Learn more about cancellation and refund policy in Subscription Terms.",
+      "By tapping \"Get my plan\" you agree that if you don't cancel at least 24 hours prior to the end of the 1 month introductory period, you will automatically be charged the full price of $40.99 every 1 month until you cancel by contacting support@longetic.com. Learn more about cancellation and refund policy in ",
   },
   {
     id: '12week',
@@ -127,7 +127,7 @@ export const PAYWALL_BUNDLES = [
     introPrice: '$34.49',
     introPerDay: '$0.41 / day',
     legal:
-      "By tapping \"Get my plan\" you agree that if you don't cancel at least 24 hours prior to the end of the 1 month introductory period, you will automatically be charged the full price of $81.99 every 3 months until you cancel by contacting support@goduomo.com. Learn more about cancellation and refund policy in Subscription Terms.",
+      "By tapping \"Get my plan\" you agree that if you don't cancel at least 24 hours prior to the end of the 1 month introductory period, you will automatically be charged the full price of $81.99 every 3 months until you cancel by contacting support@longetic.com. Learn more about cancellation and refund policy in ",
   },
 ]
 

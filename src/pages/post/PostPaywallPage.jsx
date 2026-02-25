@@ -135,6 +135,7 @@ export function PostPaywallPage() {
 
           <p className={styles.bundleLegalSingle}>
             {PAYWALL_BUNDLES.find((b) => b.id === selectedBundle)?.legal}
+            <a href="https://www.longetic.com/subscription-policy" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>Subscription Terms</a>.
           </p>
 
           <button type="button" className={styles.ctaPrimary} onClick={handleGetPlan}>
@@ -244,6 +245,7 @@ export function PostPaywallPage() {
           </div>
           <p className={styles.bundleLegalSingle}>
             {PAYWALL_BUNDLES.find((b) => b.id === selectedBundle)?.legal}
+            <a href="https://www.longetic.com/subscription-policy" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>Subscription Terms</a>.
           </p>
           <button type="button" className={styles.ctaPrimary} onClick={handleGetPlan}>
             Get my plan
@@ -256,21 +258,18 @@ export function PostPaywallPage() {
           <p className={styles.guaranteeText}>
             We believe that Longetic Journey may work for you and you'll feel positive changes in just 4 weeks! We even are ready to return your money back if you don't see results and can demonstrate that you followed our plan.
           </p>
-          <p className={styles.guaranteeLink}>
-            Find more about applicable limitations in our <Link to="/money-back" className={styles.inlineLink}>money-back policy</Link>.
-          </p>
         </section>
       </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerRow}>
-          <Link to="/terms" className={styles.footerLink}>Terms of Use</Link>
+          <a href="https://www.longetic.com/terms-of-use" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>Terms of Use</a>
           <span className={styles.footerDot}> • </span>
-          <Link to="/privacy" className={styles.footerLink}>Privacy Policy</Link>
+          <a href="https://www.longetic.com/privacy-policy" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>Privacy Policy</a>
           <span className={styles.footerDot}> • </span>
-          <Link to="/restore" className={styles.footerLink}>Restore Purchase</Link>
+          <a href="https://www.longetic.com/subscription-policy" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>Subscription Policy</a>
         </div>
-        <p className={styles.copyright}>2026 Longetic. All rights reserved.</p>
+        <p className={styles.copyright}>© 2026 Irator Limited, Nicosia, Cyprus. All rights reserved.</p>
       </footer>
     </div>
   )

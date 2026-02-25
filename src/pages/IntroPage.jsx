@@ -34,10 +34,9 @@ export function IntroPage() {
         </div>
         <p className={styles.legal}>
           By continuing, you agree to the{' '}
-          <Link to="/terms" className={styles.legalLink}>Terms of Use</Link>,{' '}
-          <Link to="/privacy" className={styles.legalLink}>Privacy Policy</Link>,{' '}
-          <Link to="/subscription" className={styles.legalLink}>Subscription Policy</Link>, and{' '}
-          <Link to="/cookie" className={styles.legalLink}>Cookie Policy</Link>.
+          <a href="https://www.longetic.com/terms-of-use" target="_blank" rel="noopener noreferrer" className={styles.legalLink}>Terms of Use</a>,{' '}
+          <a href="https://www.longetic.com/privacy-policy" target="_blank" rel="noopener noreferrer" className={styles.legalLink}>Privacy Policy</a>, and{' '}
+          <a href="https://www.longetic.com/subscription-policy" target="_blank" rel="noopener noreferrer" className={styles.legalLink}>Subscription Policy</a>.
         </p>
         <p className={styles.disclaimer}>{INTRO.disclaimer}</p>
       </div>
