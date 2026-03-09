@@ -269,7 +269,7 @@ export function PostPaywallPage() {
           <span className={styles.footerDot}> • </span>
           <a href="https://www.longetic.com/subscription-policy" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>Subscription Policy</a>
         </div>
-        <p className={styles.copyright}>© 2026 Irator Limited, Nicosia, Cyprus. All rights reserved.</p>
+        <p className={styles.copyright}>© 2026 Longetic Limited, Nicosia, Cyprus. All rights reserved.</p>
       </footer>
     </div>
   )
